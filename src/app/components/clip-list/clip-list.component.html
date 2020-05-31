@@ -1,0 +1,15 @@
+<main class="section">
+  <div *ngIf="clipsReady(); then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+  <app-list-item
+      *ngFor="let clip of filterClips()"
+      [item]="clip"
+      [active]="clip.path == active ? 'item selectedItem' : 'item'"
+      (click)="selectItem(clip.path)"
+      >
+    </app-list-item>
+</ng-template>
+<ng-template #elseBlock>
+  No Joker is selected...
+</ng-template>
+</main>

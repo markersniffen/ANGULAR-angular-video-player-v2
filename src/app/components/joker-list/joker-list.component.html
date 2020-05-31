@@ -1,0 +1,13 @@
+<main class="section">
+  <h2>List of Comedians</h2>
+  <app-list-item
+    *ngFor="let item of jokers; let i = index"
+    [item]="item"
+    [active]="i == active ? 'item selectedItem' : 'item'"
+    (click)="selectItem(i)"
+    >
+  </app-list-item>
+  <button class="btn">add</button>
+  <button class="btn">remove</button>
+  <button class="btn">reload</button>
+</main>
